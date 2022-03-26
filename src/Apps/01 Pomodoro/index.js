@@ -84,7 +84,7 @@ function PomodoroApp() {
           {(Math.floor(timeLeft/60) < 10) ? `0${Math.floor(timeLeft/60)}` : Math.floor(timeLeft/60)}:{(timeLeft%60 < 10) ? `0${timeLeft%60}` : timeLeft%60}
         </span>
         {isRinging && 
-          <div className="fixed top-0 w-screen h-screen bg-indigo-600 bg-opacity-30 flex items-center justify-center">
+          <div className="fixed top-0 w-screen h-screen backdrop-blur flex items-center justify-center">
           <div className="p-16 bg-custom flex flex-col justify-around items-center rounded-lg">
             <h2 className="text-2xl">Time's Up!</h2>
             <button className="bg-indigo-600 text-white px-4 py-3 rounded-lg" onClick={() => alarmHandler()} type="button">Dismiss</button>
@@ -92,7 +92,7 @@ function PomodoroApp() {
         </div>
         }
         {isEditing && 
-          <div className="fixed top-0 w-screen h-screen bg-indigo-600 bg-opacity-30 flex items-center justify-center">
+          <div className="fixed top-0 w-screen h-screen backdrop-blur flex items-center justify-center">
           <form onSubmit={(e) => handleEditSubmit(e)} className="p-8 bg-custom flex flex-col justify-around items-center rounded-lg">
             <h2 className="text-3xl mb-8">Edit periods</h2>
             <label htmlFor="workTime" className="flex flex-col w-full my-4">
